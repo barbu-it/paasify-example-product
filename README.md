@@ -15,13 +15,9 @@ cd paasify-example-product
 
 Check your environment variables and update your secrets:
 ```
-nano vars.dev.yml
+cp vars.dev.yml vars.env.yml
+nano vars.env.yml
 nano secrets.yml
-```
-
-Enable which env you want to deploy, synlink it to `vars.env.yml`:
-```
-ln -s vars.dev.yml vars.env.yml
 ```
 
 Run temporary fix perms script (will be deprecated soon):

@@ -3,6 +3,7 @@
 
 # Ignore containers config
 secrets.yml
+vars.env.yml
 */*/data/*
 */*/db_data/*
 */*/logs/*
