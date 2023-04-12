@@ -38,9 +38,9 @@ stacks:
       # Missing: Basic auth !
       #- expose_admin
 
-      - le-tls
+      #- le-tls
       # Or via DNS
-      # - le-dns
+      - le-dns
 
   # App: v2
   - app: infra:librespeed
@@ -49,6 +49,8 @@ stacks:
       - homepage
 
   - app: infra:gitea
+    vars:
+      app_name: git
     tags:
       - mysql
       - traefik-svc
@@ -62,7 +64,7 @@ stacks:
   # Homepage (optional)
   - app: official:homepage
     vars:
-      #app_name: home
+      app_name: home
     tags:
       - traefik-svc
       - homepage
