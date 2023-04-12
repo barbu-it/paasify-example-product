@@ -9,5 +9,3 @@
 # When in devel mode
 _collections
 
-# TEMP
-docker-compose.run.yml

@@ -15,8 +15,8 @@ cd paasify-example-product
 
 Check your environment variables and update your secrets:
 ```
-$EDITOR vars.dev.yml
-$EDITOR secrets.yml
+nano vars.dev.yml
+nano secrets.yml
 ```
 
 Enable which env you want to deploy, synlink it to `vars.env.yml`:
@@ -24,18 +24,28 @@ Enable which env you want to deploy, synlink it to `vars.env.yml`:
 ln -s vars.dev.yml vars.env.yml
 ```
 
-Run temporary fix perms script:
+Run temporary fix perms script (will be deprecated soon):
 ```
 monitoring/fix_perms.sh
+```
+
+Install stack sources (will be deprecated soon):
+```
+paasify -c myapp/ src install
+paasify -c monitoring/ src install
 ```
 
 
 Starts your stacks:
 ```
-paasify -c myapp/ src-install
-paasify -c myapp/ apply
-paasify -c monitoring/ src-install
-paasify -c monitoring/ apply
+cd myapp
+paasify apply
+```
+
+Then on the monitoring stack:
+```
+cd ../monitoring
+paasify apply
 ```
 
 Enjoy
