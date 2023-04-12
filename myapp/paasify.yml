@@ -28,18 +28,19 @@ stacks:
     tags:
       - expose_http
       - expose_https
-      #- expose_admin
-      
-      # Change in prod!
-      #- le-tls
-      - le-dns
-
       - redirect_http
+
       - homepage
       - traefik-svc:
           traefik_net_external: false
           traefik_svc_port: "8080"
+
       # Missing: Basic auth !
+      #- expose_admin
+
+      - le-tls
+      # Or via DNS
+      # - le-dns
 
   # App: v2
   - app: infra:librespeed
