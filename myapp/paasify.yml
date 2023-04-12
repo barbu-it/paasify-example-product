@@ -38,9 +38,9 @@ stacks:
       # Missing: Basic auth !
       #- expose_admin
 
-      #- le-tls
+      - le-tls
       # Or via DNS
-      - le-dns
+      #- le-dns
 
   # App: v2
   - app: infra:librespeed
