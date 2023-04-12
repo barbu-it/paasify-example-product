@@ -8,15 +8,9 @@ config:
     traefik_net_key: traefik
     traefik_net_name: $net_proxy
 
-    # Default admin password
-
 sources:
   - name: default
     remote: https://github.com/barbu-it/paasify-collection-infra.git
-  - name: community
-    remote: https://github.com/barbu-it/paasify-collection-community.git
-  - name: official
-    remote: https://github.com/barbu-it/paasify-collection-official.git
   - name: infra
     remote: https://github.com/barbu-it/paasify-collection-infra.git
 
@@ -28,9 +22,8 @@ stacks:
       - homepage
 
   - app: default:grafana
-    vars:
-      app_network_name: $net_prometheus 
-    #  traefik_net_ident: default
+    #vars:
+    #  app_network_name: $net_prometheus 
     tags:
       - traefik-svc
       - homepage

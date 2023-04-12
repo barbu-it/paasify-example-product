@@ -4,6 +4,7 @@
 # Ignore containers config
 secrets.yml
 vars.env.yml
+*/.paasify/*
 */*/data/*
 */*/db_data/*
 */*/logs/*

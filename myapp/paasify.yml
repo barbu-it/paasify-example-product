@@ -4,15 +4,11 @@ config:
     - ../vars.env.yml 
     - ../secrets.yml 
   vars:
-    homepage_group: "Paasify Front"
-
-    # Default admin password
+    homepage_group: "MyProduct App's"
 
 sources:
   - name: default
     remote: https://github.com/barbu-it/paasify-collection-infra.git
-  - name: community
-    remote: https://github.com/barbu-it/paasify-collection-community.git
   - name: official
     remote: https://github.com/barbu-it/paasify-collection-official.git
   - name: infra
@@ -42,7 +38,15 @@ stacks:
       # Or via DNS
       #- le-dns
 
-  # App: v2
+  # Homepage (optional)
+  - app: official:homepage
+    vars:
+      app_name: home
+    tags:
+      - traefik-svc
+      - homepage
+      - local
+
   - app: infra:librespeed
     tags:
       - traefik-svc
@@ -55,18 +59,4 @@ stacks:
       - mysql
       - traefik-svc
       - homepage
-
-  # Missing:
-  # - Python app using MariaDB
-  # - MariaDB
-
-
-  # Homepage (optional)
-  - app: official:homepage
-    vars:
-      app_name: home
-    tags:
-      - traefik-svc
-      - homepage
-      - local
 

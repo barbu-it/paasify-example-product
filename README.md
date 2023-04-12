@@ -1,16 +1,28 @@
 # Demo project
 
-This is a basic demo project, illustrating how Paasify works. Not mean to be run in production.
+This is a basic demo project, illustrating how Paasify works. Not mean to be run in production. But this repository is MEANT to be forked to track the state of your deployed infra.
 
-This repository is MEANT to be forked to track the state of your deployed infra.
+## Related Links
+
+Demo project repositories:
+
+* Demo project: https://github.com/barbu-it/paasify-example-product
+* Demo project deployment: https://github.com/barbu-it/-paasify-example-product-deploy
+
+Paasify related links:
+
+* Github: https://github.com/barbu-it/paasify
+* Documentation: https://barbu-it.github.io/paasify/
+* Paasify Collections: https://github.com/topics/paasify-collection
+* Pypi: https://pypi.org/project/paasify/
 
 
 ## Quickstart
 
 Clone this app:
 ```
-git clone https://github.com/barbu-it/paasify-example-product
-cd paasify-example-product
+git clone https://github.com/barbu-it/paasify-example-product product1
+cd product1
 ```
 
 Check your environment variables and update your secrets:
