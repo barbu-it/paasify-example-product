@@ -2,6 +2,7 @@
 *.swp
 
 # Ignore containers config
+secrets.yml
 */*/data/*
 */*/db_data/*
 */*/logs/*
