@@ -5,6 +5,8 @@ config:
     - ../secrets.yml 
   vars:
     homepage_group: "Monitoring"
+    traefik_net_key: traefik
+    traefik_net_name: $net_proxy
 
     # Default admin password
 
@@ -19,17 +21,16 @@ sources:
     remote: https://github.com/barbu-it/paasify-collection-infra.git
 
 stacks:
-    
+
+  - app: infra:prometheus
+    tags:
+      - traefik-svc
+      - homepage
 
   - app: default:grafana
     vars:
       app_network_name: $net_prometheus 
     #  traefik_net_ident: default
-    tags:
-      - traefik-svc
-      - homepage
-
-  - app: infra:prometheus
     tags:
       - traefik-svc
       - homepage
