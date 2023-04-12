@@ -46,6 +46,56 @@ paasify apply
 
 Enjoy
 
+## Demo tour
+
+Here is a list of sight your can discover in the browser:
+
+  * Base:
+    * Homepage, a good place to start
+    * Traefik Dashboard
+      * Show services
+      * Show domains
+  * Apps
+    * Install and login into gitea
+    * Test your internet speed with librespeed
+  * Monitoring
+    * Show Prometheus
+    * Loop over exporters
+    * Login into Grafana
+      * Show default dashboards
+
+
+In the code:
+
+  * Multi project setup
+      * Each sub dir is a project
+      * Common variables on the top
+  * Variable management:
+      * vars.yml
+      * vars.env.yml
+      * secrets.yml
+  * Paasify configs:
+    * Global
+        * Define global variables
+        * Include variables files
+    * Stacks
+        * App reusability with collections
+        * Homepage integration tag
+        * Traefik integration tag
+        * App name renaming (gitea)
+
+With the cli:
+
+  * Base:
+      * paasify info
+      * paasify apply
+      * paasify path context
+  * Operator:
+      * paasify build/up/down
+      * paasify explain
+  
+
+
 ## Develop
 
 To change default Paasify lookup PATH for collections:
