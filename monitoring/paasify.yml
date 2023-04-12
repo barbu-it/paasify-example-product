@@ -1,0 +1,45 @@
+config:
+  extra_vars:
+    - ../vars.yml 
+    - ../vars.env.yml 
+    - ../secrets.yml 
+  vars:
+    homepage_group: "Monitoring"
+
+    # Default admin password
+
+sources:
+  - name: default
+    remote: https://github.com/barbu-it/paasify-collection-infra.git
+  - name: community
+    remote: https://github.com/barbu-it/paasify-collection-community.git
+  - name: official
+    remote: https://github.com/barbu-it/paasify-collection-official.git
+  - name: infra
+    remote: https://github.com/barbu-it/paasify-collection-infra.git
+
+stacks:
+    
+
+  - app: default:grafana
+    vars:
+      app_network_name: $net_prometheus 
+    #  traefik_net_ident: default
+    tags:
+      - traefik-svc
+      - homepage
+
+  - app: infra:prometheus
+    tags:
+      - traefik-svc
+      - homepage
+
+  - app: infra:prom-node-exporter
+    tags:
+      - traefik-svc
+      - homepage
+
+  - app: infra:prom-cadvisor
+    tags:
+      - traefik-svc
+      - homepage

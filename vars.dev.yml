@@ -1,0 +1,8 @@
+# Paasify demo
+# ====================
+
+# Preprod
+app_expose_ip: 127.0.0.1
+app_domain: devbox.127.0.0.1.sslip.io
+app_admin_email: admin@localhost.com
+

@@ -1,0 +1,69 @@
+config:
+  extra_vars:
+    - ../vars.yml 
+    - ../vars.env.yml 
+    - ../secrets.yml 
+  vars:
+    homepage_group: "Paasify Front"
+
+    # Default admin password
+
+sources:
+  - name: default
+    remote: https://github.com/barbu-it/paasify-collection-infra.git
+  - name: community
+    remote: https://github.com/barbu-it/paasify-collection-community.git
+  - name: official
+    remote: https://github.com/barbu-it/paasify-collection-official.git
+  - name: infra
+    remote: https://github.com/barbu-it/paasify-collection-infra.git
+
+stacks:
+    
+  # Front proxy (Required)
+  - dir: traefik
+    app: default:traefik
+    vars:
+      app_network_name: $net_proxy
+    tags:
+      - expose_http
+      - expose_https
+      #- expose_admin
+      
+      # Change in prod!
+      #- le-tls
+      - le-dns
+
+      - redirect_http
+      - homepage
+      - traefik-svc:
+          traefik_net_external: false
+          traefik_svc_port: "8080"
+      # Missing: Basic auth !
+
+  # App: v2
+  - app: infra:librespeed
+    tags:
+      - traefik-svc
+      - homepage
+
+  - app: infra:gitea
+    tags:
+      - mysql
+      - traefik-svc
+      - homepage
+
+  # Missing:
+  # - Python app using MariaDB
+  # - MariaDB
+
+
+  # Homepage (optional)
+  - app: official:homepage
+    vars:
+      #app_name: home
+    tags:
+      - traefik-svc
+      - homepage
+      - local
+

@@ -1,0 +1,4 @@
+services:
+  homepage:
+    volumes:
+    - $app_dir_logs:/app/logs

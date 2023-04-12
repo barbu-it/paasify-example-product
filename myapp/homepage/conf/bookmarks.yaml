@@ -1,0 +1,23 @@
+---
+# For configuration options and examples, please see:
+# https://github.com/benphelps/homepage/wiki/Bookmarks
+
+- Paasify:
+    - Github:
+        - abbr: GH
+          href: https://github.com/barbu-it/paasify
+    - Documentation:
+        - abbr: DO
+          href: https://barbu-it.github.io/paasify/
+
+
+- Collections:
+    - Official:
+        - href: https://github.com/barbu-it/paasify-collection-official
+    - Community:
+        - href: https://github.com/barbu-it/paasify-collection-community
+    - Infra:
+        - href: https://github.com/barbu-it/paasify-collection-infra
+    - LinuxServers.io:
+        - href: https://github.com/barbu-it/paasify-collection-lscr
+

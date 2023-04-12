@@ -1,0 +1,9 @@
+---
+# For configuration options and examples, please see:
+# https://github.com/benphelps/homepage/wiki/Settings
+
+logpath: /app/logs
+
+providers:
+  openweathermap: openweathermapapikey
+  weatherapi: weatherapiapikey

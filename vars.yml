@@ -1,0 +1,22 @@
+# Paasify demo
+# ====================
+
+# Network names
+net_proxy: demo_50_front 
+
+net_prometheus: demo_60_prom
+
+# Common settings
+app_tz: America/Toronto
+app_prot: https
+
+# Default traefik config
+traefik_net_name: $net_proxy
+traefik_svc_entrypoints: "web,websecure"
+traefik_svc_tls: true
+traefik_svc_certresolver: default
+
+# Defaulft image settings
+img_mysql8_name: mysql
+img_mysql8_version: 8
+

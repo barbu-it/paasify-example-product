@@ -1,0 +1,13 @@
+# Generic
+*.swp
+
+# Ignore containers config
+*/*/data/*
+*/*/db_data/*
+*/*/logs/*
+
+# When in devel mode
+_collections
+
+# TEMP
+docker-compose.run.yml
